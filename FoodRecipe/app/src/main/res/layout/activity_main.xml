@@ -6,9 +6,18 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/txt_searchtext"
+        android:hint="Search..."
+        android:textSize="22sp"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:scrollbars="vertical"
+        android:layout_below="@+id/txt_searchtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 

@@ -9,7 +9,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.sax.StartElementListener;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private ValueEventListener valueEventListener;
     ProgressDialog progressDialog;
 
+    MyAdapter myAdapter;
+    EditText txt_search;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         //Showing rows of items with the help of Grid layout manager
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
+
+        txt_search = (EditText)findViewById(R.id.txt_searchtext);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading items . . . ");
@@ -78,7 +86,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        txt_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                filter(s.toString());
+            }
+        });
+
+    }
+
+    private void filter(String text) {
+
+        ArrayList<FoodInfo> filterList = new ArrayList<>();
+
+        for(FoodInfo item: myFoodList){
+
+            if(item.getItemName().toLowerCase().contains(text.toLowerCase())){
+
+                filterList.add(item);
+            }
+        }
+
+        myAdapter.filteredList(filterList);
     }
 
     public void btn_uploadActivity(View view) {

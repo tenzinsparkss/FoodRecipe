@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
@@ -67,6 +68,11 @@ public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
         return myFoodList.size();
     }
 
+    public void filteredList(ArrayList<FoodInfo> filterList) {
+
+        myFoodList = filterList;
+        notifyDataSetChanged();
+    }
 }
 
 
