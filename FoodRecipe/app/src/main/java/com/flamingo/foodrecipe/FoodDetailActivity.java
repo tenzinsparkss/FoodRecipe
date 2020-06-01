@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class FoodDetailActivity extends AppCompatActivity {
 
     TextView foodDescription, foodTitle;
@@ -26,7 +28,13 @@ public class FoodDetailActivity extends AppCompatActivity {
         if(mBundle!=null){
             foodTitle.setText(mBundle.getString("Title"));
             foodDescription.setText(mBundle.getString("Description"));
-            foodImage.setImageResource(mBundle.getInt("Image"));        }
+            foodImage.setImageResource(mBundle.getInt("Image"));
+
+            Glide.with(this)
+                    .load(mBundle.getString("Image"))
+                    .into(foodImage);
+
+        }
 
 
 

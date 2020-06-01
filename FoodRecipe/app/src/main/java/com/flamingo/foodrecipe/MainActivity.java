@@ -1,13 +1,21 @@
 package com.flamingo.foodrecipe;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.sax.StartElementListener;
 import android.view.View;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<FoodInfo> myFoodList;
     FoodInfo mFoodData;
+
+    private DatabaseReference databaseReference;
+    private ValueEventListener valueEventListener;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -30,12 +42,42 @@ public class MainActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading items . . . ");
+
         myFoodList = new ArrayList<>();
 
-       
-
-        MyAdapter myAdapter = new MyAdapter(MainActivity.this, myFoodList);
+        final MyAdapter myAdapter = new MyAdapter(MainActivity.this, myFoodList);
         mRecyclerView.setAdapter(myAdapter);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Flamingo_FoodRecipe");
+        progressDialog.show();
+
+        valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                myFoodList.clear();
+
+                for(DataSnapshot itemSnapshot: dataSnapshot.getChildren()){
+
+                    FoodInfo foodData = itemSnapshot.getValue(FoodInfo.class);
+
+                    myFoodList.add(foodData);
+                }
+
+                myAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressDialog.dismiss();
+            }
+        });
+
 
     }
 

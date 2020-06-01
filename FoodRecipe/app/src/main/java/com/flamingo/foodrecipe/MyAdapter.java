@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
@@ -34,6 +36,11 @@ public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final FoodViewHolder holder, int position) {
+
+        //showing selected image with the help of glide
+        Glide.with(mContext)
+                .load(myFoodList.get(position).getItemImage())
+                .into(holder.imageView);
 
         //holder.imageView.setImageResource(Integer.parseInt(String.valueOf(myFoodList.get(position).getItemImage())));
         holder.mTitle.setText(myFoodList.get(position).getItemName());
