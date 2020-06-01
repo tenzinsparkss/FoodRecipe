@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.sax.StartElementListener;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
         myFoodList = new ArrayList<>();
 
-        mFoodData = new FoodInfo("Tingmo","It is so delicious and made of Wheat and Flour","Veg", R.drawable.img1);
-        myFoodList.add(mFoodData);
-        mFoodData = new FoodInfo("Chowmein","It is so delicious","Non-veg", R.drawable.img2);
-        myFoodList.add(mFoodData);
-        mFoodData = new FoodInfo("Thukpa","It is so delicious","Non-veg", R.drawable.img3);
-        myFoodList.add(mFoodData);
+       
 
         MyAdapter myAdapter = new MyAdapter(MainActivity.this, myFoodList);
         mRecyclerView.setAdapter(myAdapter);
 
+    }
+
+    public void btn_uploadActivity(View view) {
+
+        startActivity(new Intent(this, UploadRecipe.class));
     }
 }

@@ -5,9 +5,9 @@ public class FoodInfo {
     private String itemName;
     private String itemDescription;
     private String itemType;
-    private int itemImage;
+    private String itemImage;
 
-    public FoodInfo(String itemName, String itemDescription, String itemType, int itemImage) {
+    public FoodInfo(String itemName, String itemDescription, String itemType, String itemImage) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
         this.itemType = itemType;
@@ -26,7 +26,7 @@ public class FoodInfo {
         return itemType;
     }
 
-    public int getItemImage() {
+    public String getItemImage() {
         return itemImage;
     }
 }

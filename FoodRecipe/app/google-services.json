@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1091733767156",
+    "firebase_url": "https://foodrecipe-6cd48.firebaseio.com",
+    "project_id": "foodrecipe-6cd48",
+    "storage_bucket": "foodrecipe-6cd48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091733767156:android:12a9d126dca4564b8bafa1",
+        "android_client_info": {
+          "package_name": "com.flamingo.foodrecipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091733767156-g1atlvppe3he9v5tqbia9ca4mk1k270n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqYXLLCWFaqLRWoMztI4XiAngtJV7V2zI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091733767156-g1atlvppe3he9v5tqbia9ca4mk1k270n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -35,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final FoodViewHolder holder, int position) {
 
-        holder.imageView.setImageResource(Integer.parseInt(String.valueOf(myFoodList.get(position).getItemImage())));
+        //holder.imageView.setImageResource(Integer.parseInt(String.valueOf(myFoodList.get(position).getItemImage())));
         holder.mTitle.setText(myFoodList.get(position).getItemName());
         holder.mDescription.setText(myFoodList.get(position).getItemDescription());
         holder.mType.setText(myFoodList.get(position).getItemType());
