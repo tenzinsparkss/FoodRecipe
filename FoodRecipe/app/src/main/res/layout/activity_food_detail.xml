@@ -32,11 +32,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:text="Type"
+        android:textColor="@color/colorAccent"
+        android:textSize="27sp"
+        android:textStyle="bold|italic"
+        android:gravity="end"
+        android:id="@+id/txtType"
+        />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent" >
-
         <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Update"
+            android:textSize="22sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:onClick="btn_update_Recipe"/>
+        <Button
+            android:id="@+id/btnDelete"
             android:layout_width="140dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/colorPrimary"

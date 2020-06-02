@@ -18,7 +18,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class FoodDetailActivity extends AppCompatActivity {
 
-    TextView foodDescription, foodTitle;
+    TextView foodDescription, foodTitle, foodType;
     ImageView foodImage;
     String key = "";
     String imageURL = "";
@@ -32,12 +32,14 @@ public class FoodDetailActivity extends AppCompatActivity {
         foodDescription = (TextView)findViewById(R.id.txtDescription);
         foodImage = (ImageView)findViewById(R.id.ivImg1);
         foodTitle = (TextView)findViewById(R.id.txtTitle);
+        foodType = (TextView)findViewById(R.id.txtType);
 
         Bundle mBundle = getIntent().getExtras();
 
         if(mBundle!=null){
             foodTitle.setText(mBundle.getString("Title"));
             foodDescription.setText(mBundle.getString("Description"));
+            foodType.setText(mBundle.getString("Type"));
 //            foodImage.setImageResource(mBundle.getInt("Image"));
             key = mBundle.getString("keyValue");
             imageURL = mBundle.getString("Image");
@@ -69,5 +71,15 @@ public class FoodDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void btn_update_Recipe(View view) {
+
+        startActivity(new Intent(getApplicationContext(), UpdateRecipe.class)
+        .putExtra("foodTitleKey", foodTitle.getText().toString())
+        .putExtra("descriptionKey", foodDescription.getText().toString())
+        .putExtra("typeKey", foodType.getText().toString())
+        .putExtra("oldimageUrl", imageURL)
+        .putExtra("key", key));
     }
 }
