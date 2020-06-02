@@ -32,5 +32,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Delete"
+            android:textSize="22sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:onClick="btn_delete_Recipe"/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

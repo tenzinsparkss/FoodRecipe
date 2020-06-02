@@ -6,6 +6,7 @@ public class FoodInfo {
     private String itemDescription;
     private String itemType;
     private String itemImage;
+    private String key;
 
     public FoodInfo(){}
 
@@ -30,5 +31,13 @@ public class FoodInfo {
 
     public String getItemImage() {
         return itemImage;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

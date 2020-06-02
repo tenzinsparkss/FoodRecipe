@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         myFoodList = new ArrayList<>();
 
-        final MyAdapter myAdapter = new MyAdapter(MainActivity.this, myFoodList);
+        myAdapter = new MyAdapter(MainActivity.this, myFoodList);
         mRecyclerView.setAdapter(myAdapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Flamingo_FoodRecipe");
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 for(DataSnapshot itemSnapshot: dataSnapshot.getChildren()){
 
                     FoodInfo foodData = itemSnapshot.getValue(FoodInfo.class);
+                    foodData.setKey(itemSnapshot.getKey());//delete from db
 
                     myFoodList.add(foodData);
                 }
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    //Search in recycler view by item title
     private void filter(String text) {
 
         ArrayList<FoodInfo> filterList = new ArrayList<>();

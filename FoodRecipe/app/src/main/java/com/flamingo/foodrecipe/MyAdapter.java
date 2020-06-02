@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
     private Context mContext;
     private List<FoodInfo> myFoodList;
+    private int lPosition = -1;
 
     public MyAdapter(Context mContext, List<FoodInfo> myFoodList) {
         this.mContext = mContext;
@@ -55,10 +58,24 @@ public class MyAdapter extends RecyclerView.Adapter<FoodViewHolder> {
                 intent.putExtra("Image", myFoodList.get(holder.getAdapterPosition()).getItemImage());
                 intent.putExtra("Title", myFoodList.get(holder.getAdapterPosition()).getItemName());
                 intent.putExtra("Description", myFoodList.get(holder.getAdapterPosition()).getItemDescription());
+                intent.putExtra("keyValue", myFoodList.get(holder.getAdapterPosition()).getKey());
                 mContext.startActivity(intent);
             }
         });
+        //Animation method
+        setAnimation(holder.itemView, position);
 
+    }
+    //set animation for recycler view
+    public  void setAnimation (View viewToAnimate, int position){
+
+        if(position > lPosition){
+            ScaleAnimation animation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f,
+                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+            animation.setDuration(1400);
+            viewToAnimate.startAnimation(animation);
+            lPosition = position;
+        }
 
     }
 

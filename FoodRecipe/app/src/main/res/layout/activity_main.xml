@@ -10,7 +10,7 @@ tools:context=".MainActivity">
         android:id="@+id/txt_searchtext"
         android:hint="Search..."
         android:textSize="22sp"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
