@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FoodRecipe</string>
+    <string name="search_your_recipes">Search Your Recipes…</string>
+    <string name="meal_categories">Meal Categories</string>
 </resources>

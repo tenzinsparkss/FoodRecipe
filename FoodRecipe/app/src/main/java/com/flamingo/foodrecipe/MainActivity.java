@@ -13,12 +13,15 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -125,5 +128,9 @@ public class MainActivity extends AppCompatActivity {
     public void btn_uploadActivity(View view) {
 
         startActivity(new Intent(this, UploadRecipe.class));
+    }
+
+    public void btn_HomeActivity(View view) {
+        startActivity(new Intent(this, HomeActivity.class));
     }
 }

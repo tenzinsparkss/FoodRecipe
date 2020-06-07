@@ -144,6 +144,7 @@ public class UpdateRecipe extends AppCompatActivity {
                 StorageReference storageReferenceNew = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageUrl);
                 storageReferenceNew.delete();
                 Toast.makeText(UpdateRecipe.this, "Data is updated", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
