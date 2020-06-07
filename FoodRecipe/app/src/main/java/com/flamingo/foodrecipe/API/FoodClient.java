@@ -1,4 +1,4 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.API;
 
 import java.util.concurrent.TimeUnit;
 

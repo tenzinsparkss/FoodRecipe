@@ -1,4 +1,7 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.Controller;
+
+import com.flamingo.foodrecipe.Model.Categories;
+import com.flamingo.foodrecipe.Model.Meals;
 
 import java.util.List;
 

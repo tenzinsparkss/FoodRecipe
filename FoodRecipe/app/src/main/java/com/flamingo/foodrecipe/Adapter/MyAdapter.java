@@ -1,4 +1,4 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.flamingo.foodrecipe.Controller.FoodDetailActivity;
+import com.flamingo.foodrecipe.Model.FoodInfo;
+import com.flamingo.foodrecipe.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,10 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.flamingo.foodrecipe.Categories;
+
+import com.flamingo.foodrecipe.Model.Meals;
 import com.flamingo.foodrecipe.R;
-
-
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

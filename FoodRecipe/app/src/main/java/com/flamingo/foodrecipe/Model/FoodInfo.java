@@ -1,4 +1,4 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.Model;
 
 public class FoodInfo {
 

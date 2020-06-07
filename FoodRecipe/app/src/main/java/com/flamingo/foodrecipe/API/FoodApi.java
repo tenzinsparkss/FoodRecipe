@@ -1,7 +1,7 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.API;
 
-import com.flamingo.foodrecipe.Meals;
-import com.flamingo.foodrecipe.Categories;
+import com.flamingo.foodrecipe.Model.Categories;
+import com.flamingo.foodrecipe.Model.Meals;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

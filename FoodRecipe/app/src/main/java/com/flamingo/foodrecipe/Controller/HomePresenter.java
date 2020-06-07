@@ -1,13 +1,11 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.Controller;
 
-
-import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import com.flamingo.foodrecipe.Categories;
-import com.flamingo.foodrecipe.HomeView;
-import com.flamingo.foodrecipe.Meals;
+import com.flamingo.foodrecipe.Controller.HomeView;
+import com.flamingo.foodrecipe.Model.Categories;
+import com.flamingo.foodrecipe.Model.Meals;
 import com.flamingo.foodrecipe.Utils;
 
 import retrofit2.Call;
@@ -17,7 +15,7 @@ import retrofit2.Response;
 class HomePresenter {
      private HomeView view;
 
-    public HomePresenter(HomeView view) {
+    HomePresenter(HomeView view) {
         this.view = view;
     }
 

@@ -1,21 +1,28 @@
-package com.flamingo.foodrecipe;
+package com.flamingo.foodrecipe.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+
+import com.flamingo.foodrecipe.Adapter.RecyclerViewHomeAdapter;
+import com.flamingo.foodrecipe.Adapter.ViewPagerHeaderAdapter;
+import com.flamingo.foodrecipe.Controller.HomeView;
+import com.flamingo.foodrecipe.Controller.HomePresenter;
+import com.flamingo.foodrecipe.Model.Categories;
+import com.flamingo.foodrecipe.Model.Meals;
+import com.flamingo.foodrecipe.R;
+import com.flamingo.foodrecipe.Utils;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity implements HomeView{
+public class HomeActivity extends AppCompatActivity implements HomeView {
     @BindView(R.id.viewPageHeader)
     ViewPager viewPagerMeal;
 
