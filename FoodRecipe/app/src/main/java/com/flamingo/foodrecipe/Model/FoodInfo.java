@@ -1,7 +1,6 @@
 package com.flamingo.foodrecipe.Model;
 
 public class FoodInfo {
-
     private String itemName;
     private String itemDescription;
     private String itemType;

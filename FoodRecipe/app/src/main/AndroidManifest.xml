@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Controller.CategoryActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:label="Category"/>
     </application>
 
 </manifest>

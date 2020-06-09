@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,12 +18,18 @@ import com.flamingo.foodrecipe.Model.Meals;
 import com.flamingo.foodrecipe.R;
 import com.flamingo.foodrecipe.Utils;
 
+import java.io.Serializable;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.nfc.cardemulation.CardEmulation.EXTRA_CATEGORY;
+
 public class HomeActivity extends AppCompatActivity implements HomeView {
+    public static final String EXTRA_CATEGORY = "category";
+    public static final String EXTRA_POSITION = "position";
+
     @BindView(R.id.viewPageHeader)
     ViewPager viewPagerMeal;
 
@@ -73,6 +80,15 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         recyclerViewCategory.setLayoutManager(layoutManager);
         recyclerViewCategory.setNestedScrollingEnabled(true);
         homeAdapter.notifyDataSetChanged();
+        
+        homeAdapter.setOnItemClickListener((view, position) -> {
+            Intent intent = new Intent(this, CategoryActivity.class);
+            intent.putExtra(EXTRA_CATEGORY, (Serializable) category);
+            intent.putExtra(EXTRA_POSITION, position);
+            startActivity(intent);
+        });
+
+
     }
 
     @Override
