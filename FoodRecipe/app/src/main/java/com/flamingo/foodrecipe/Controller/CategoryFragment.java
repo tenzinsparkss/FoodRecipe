@@ -1,6 +1,7 @@
 package com.flamingo.foodrecipe.Controller;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.flamingo.foodrecipe.Controller.HomeActivity.EXTRA_DETAIl;
 
 public class CategoryFragment extends Fragment implements CategoryView {
     @BindView(R.id.recyclerView)
@@ -91,7 +94,13 @@ public class CategoryFragment extends Fragment implements CategoryView {
         adapter.notifyDataSetChanged();
 
         adapter.setOnItemClickListener((view, position) -> {
-            Toast.makeText(getActivity(), "meal : " + meals.get(position).getStrMeal(), Toast.LENGTH_SHORT).show();
+
+//            Toast.makeText(getActivity(), "meal : " + meals.get(position).getStrMeal(), Toast.LENGTH_SHORT).show();
+            TextView mealName = view.findViewById(R.id.mealName);
+            Intent intent = new Intent(getActivity(), MealDetailActivity.class);
+            intent.putExtra(EXTRA_DETAIl, mealName.getText().toString());
+            startActivity(intent);
+
 
         });
     }

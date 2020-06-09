@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.flamingo.foodrecipe.Adapter.RecyclerViewHomeAdapter;
 import com.flamingo.foodrecipe.Adapter.ViewPagerHeaderAdapter;
@@ -29,6 +30,7 @@ import static android.nfc.cardemulation.CardEmulation.EXTRA_CATEGORY;
 public class HomeActivity extends AppCompatActivity implements HomeView {
     public static final String EXTRA_CATEGORY = "category";
     public static final String EXTRA_POSITION = "position";
+    public static final String EXTRA_DETAIl = "detail";
 
     @BindView(R.id.viewPageHeader)
     ViewPager viewPagerMeal;
@@ -67,10 +69,18 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     public void setMeal(List<Meals.Meal> meal) {
         ViewPagerHeaderAdapter headerAdapter = new ViewPagerHeaderAdapter(meal, this);
         viewPagerMeal.setAdapter(headerAdapter);
-        viewPagerMeal.setPadding(20,0,150,0);
+        viewPagerMeal.setPadding(20, 0, 150, 0);
         headerAdapter.notifyDataSetChanged();
-        }
 
+        //intent to MealDetailActivity (get the name of the meal from the edit text view, then send the name of the meal)
+        headerAdapter.setOnItemClickListener((view, position) -> {
+            TextView mealName = view.findViewById(R.id.mealName);
+            Intent intent = new Intent(getApplicationContext(), MealDetailActivity.class);
+            intent.putExtra(EXTRA_DETAIl, mealName.getText().toString());
+            startActivity(intent);
+
+        });
+    }
 
     @Override
     public void setCategory(List<Categories.Category> category) {

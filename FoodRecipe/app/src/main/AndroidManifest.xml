@@ -3,7 +3,7 @@
     package="com.flamingo.foodrecipe">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.HomeActivity"></activity>
+        <activity android:name=".Controller.RegisterActivity"></activity>
+        <activity android:name=".Controller.LoginActivity" />
+        <activity android:name=".Controller.HomeActivity" />
         <activity android:name=".Controller.UpdateRecipe" />
         <activity android:name=".Controller.UploadRecipe" />
         <activity android:name=".Controller.FoodDetailActivity" />
@@ -25,9 +27,12 @@
         </activity>
         <activity
             android:name=".Controller.CategoryActivity"
-            android:theme="@style/AppTheme"
+            android:label="Category"
             android:screenOrientation="portrait"
-            android:label="Category"/>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Controller.MealDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
