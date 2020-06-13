@@ -23,7 +23,7 @@
         <EditText
             android:id="@+id/txt_recipe_name"
             android:hint="Recipe Name"
-            android:textSize="19sp"
+            android:textSize="22sp"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -31,36 +31,38 @@
         <EditText
             android:id="@+id/text_description"
             android:hint="Description"
-            android:textSize="10sp"
+            android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/text_type"
-            android:hint="Type"
-            android:textSize="19sp"
+            android:hint="Food Type"
+            android:textSize="20sp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Button
             android:text="Select Image"
-            android:textSize="22sp"
-            android:backgroundTint="@color/colorAccent"
+            android:textSize="16sp"
+            android:background="@drawable/custom_button"
             android:textColor="#180f8c"
+            android:layout_marginTop="20dp"
             android:onClick="btnSelectImage"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="40dp" />
 
         <Button
             android:text="Update_Recipe"
-            android:textSize="22sp"
-            android:backgroundTint="@color/colorAccent"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button"
             android:textColor="#180f8c"
             android:onClick="btnUpdateRecipe"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="40dp" />
 
     </LinearLayout>
 

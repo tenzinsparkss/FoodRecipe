@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:src="@drawable/ic_person_black_24dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#0a0100"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="150sp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="50sp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_below="@id/profileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flamingo User"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="35sp"
+            android:textSize="20sp"
+            android:layout_marginStart="155sp"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/email_label_profile"
+            android:layout_below="@id/userName"
+            android:layout_marginStart="60sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60sp"
+            android:textSize="20sp"
+            android:text="Email: "
+            tools:ignore="RtlCompat" />
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_label_profile"
+            android:layout_marginStart="60sp"
+            android:hint="flamingo.user@flamingo.com"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/userContact"
+            android:layout_below="@id/userEmail"
+            android:layout_marginStart="60sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:text="Phone: "
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+        <EditText
+            android:id="@+id/userPhone"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userContact"
+            android:layout_marginStart="60sp"
+            android:hint="+977 9808993000"
+            android:inputType="number"
+            tools:ignore="RtlCompat" />
+        <Button
+            android:text="Logout"
+            android:layout_below="@+id/userPhone"
+            android:textSize="20sp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"
+            android:onClick="logoutBtn"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+    </RelativeLayout>
+
+</ScrollView>

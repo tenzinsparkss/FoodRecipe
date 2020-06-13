@@ -11,7 +11,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppBarLayoutTheme">
+        android:background="#85CAF5">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorHeight="3dp"
-            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorColor="#85CAF5"
             app:tabMode="scrollable"
             app:tabContentStart="85dp"/>
 

@@ -10,18 +10,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.flamingo.foodrecipe.Adapter.MyAdapter;
 import com.flamingo.foodrecipe.Model.FoodInfo;
 import com.flamingo.foodrecipe.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     MyAdapter myAdapter;
     EditText txt_search;
 
+    Button logout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,17 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
         txt_search = (EditText)findViewById(R.id.txt_searchtext);
+
+        //logout features
+        logout = findViewById(R.id.btnLogout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        });
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading items . . . ");
@@ -129,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, UploadRecipe.class));
     }
 
-    public void btn_HomeActivity(View view) {
-        startActivity(new Intent(this, HomeActivity.class));
+    public void btn_Profile(View view) {
+
+        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
     }
 }

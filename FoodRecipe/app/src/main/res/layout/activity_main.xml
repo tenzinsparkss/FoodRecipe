@@ -6,50 +6,62 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".Controller.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#85CAF5"
+        app:menu="@menu/menu_main"
+        app:title="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
     <EditText
         android:id="@+id/txt_searchtext"
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:padding="10dp"
-        android:text="Search your Recipes . . ."
-        android:textColor="@color/colorPrimaryDark"
+        android:hint="Search..."
+        android:textColor="#000508"
         android:gravity="center_vertical"
         android:drawableLeft="@drawable/ic_search_black_24dp"
-        android:drawableTint="@color/colorAccent"
+        android:drawableTint="#85CAF5"
         android:drawablePadding="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/txt_searchtext"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:scrollbars="vertical">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_margin="40dp"
-        android:tint="@color/colorAccent"
         android:src="@drawable/ic_cloud_upload_black_24dp"
+        android:backgroundTint="#85CAF5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:onClick="btn_uploadActivity"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_margin="40dp"
-        android:tint="@color/colorAccent"
-        android:src="@drawable/ic_cloud_upload_black_24dp"
+
+    <Button
+        android:id="@+id/btnLogout"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="btn_HomeActivity"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:drawableBottom="@drawable/custom_button"
+        android:text="Logout"
+        android:layout_alignParentRight="true" />
+
 
 
 

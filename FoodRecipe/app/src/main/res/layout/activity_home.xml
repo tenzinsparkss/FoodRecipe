@@ -21,12 +21,12 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:background="@color/colorPrimary"/>
+            android:background="#85CAF5"/>
 
         <TextView
             android:id="@+id/title"
             android:textColor="@color/colorWhite"
-            android:text="@string/app_name"
+            android:text="Flamingo Food Recipe"
             android:textStyle="bold"
             android:textSize="30sp"
             android:layout_marginLeft="16dp"
@@ -43,19 +43,18 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="15dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
+            app:cardBackgroundColor="#B8E1FC"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:padding="10dp"
-                android:text="@string/search_your_recipes"
-                android:textColor="@color/colorPrimaryLight"
+                android:layout_height="60dp"
+                android:padding="12dp"
+                android:text="“A recipe has no soul, you as the cook must bring soul to the recipe.” - Thomas Keller | Obsev.
+"               android:textStyle="bold"
+                android:textColor="#FFFFFF"
                 android:gravity="center_vertical"
-                android:drawableLeft="@drawable/ic_search_primary_light"
-                android:drawableStart="@drawable/ic_search_primary_light"
                 android:drawablePadding="10dp"/>
 
         </androidx.cardview.widget.CardView>
@@ -77,7 +76,7 @@
             android:id="@+id/titleCategory"
             android:text="@string/meal_categories"
             android:textSize="19sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#D3B8FC"
             android:textStyle="bold"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -105,18 +104,14 @@
             android:padding="10dp"
             android:gravity="center"
             android:textColor="@color/colorWhite"
-            android:text="Foods Recipe"
-            android:background="@color/colorPrimaryLight"
+            android:text="Explore more ideas with flamingo account. Click here!"
+            android:background="#85CAF5"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:onClick="btnLoginPage"/>
         
     </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-
-        
-    
-   
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

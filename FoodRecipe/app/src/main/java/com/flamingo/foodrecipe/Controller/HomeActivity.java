@@ -1,5 +1,6 @@
 package com.flamingo.foodrecipe.Controller;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +9,9 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.flamingo.foodrecipe.Adapter.RecyclerViewHomeAdapter;
 import com.flamingo.foodrecipe.Adapter.ViewPagerHeaderAdapter;
@@ -49,6 +52,21 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         presenter = new HomePresenter(this);
         presenter.getMeals();
         presenter.getCategories();
+
+        final AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("Need an Account?")
+                .setMessage("Explore more ideas with flamingo account.. join with us!!")
+                .setPositiveButton("Ok", null)
+                .setNegativeButton("Cancel", null)
+                .show();
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Please go down to create a new account", Toast.LENGTH_SHORT).show();
+//                dialog.dismiss();
+            }
+        });
     }
 
     @Override
@@ -104,5 +122,10 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     @Override
     public void onErrorLoading(String message) {
         Utils.showDialogMessage(this, "Title", message);
+    }
+
+
+    public void btnLoginPage(View view) {
+        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
     }
 }
